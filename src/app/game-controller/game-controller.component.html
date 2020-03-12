@@ -1,0 +1,11 @@
+<div class="shadowBox">
+  <div class="loading" *ngIf="this.loading"></div>
+  <img class="postImage" *ngIf="!this.loading" src="{{ this.currentImage }}" />
+</div>
+
+<div class="controller">
+  <button (click)="this.nextPost()">Next</button>
+  <input #subInput type="text" />
+  <button (click)="this.checkSub(subInput.value)">Submit</button>
+  <button (click)="this.newSub()">New Sub</button>
+</div>
