@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  labels:
+    app: redditguessr
+  name: redditguessr-ingress
+spec:
+  rules:
+    - host: redditguessr.kolpa.de
+      http:
+        paths:
+          - backend:
+              serviceName: redditguessr-service
+              servicePort: 80
+  tls:
+    - hosts:
+        - redditguessr.kolpa.de
+      secretName: redditguessr-cert

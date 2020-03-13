@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redditguessr
+  name: redditguessr-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redditguessr
+  template:
+    metadata:
+      labels:
+        app: redditguessr
+    spec:
+      containers:
+        - image: docker.kolpa.de/web/redditguessr:latest
+          imagePullPolicy: Always
+          name: redditguessr
