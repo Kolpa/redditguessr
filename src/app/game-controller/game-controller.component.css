@@ -23,10 +23,23 @@
 }
 
 .loading {
-  width: 5vw;
-  height: 5vw;
+  width: 3vw;
+  height: 3vw;
   background-color: red;
   animation: spin 1s linear 0s infinite;
+}
+
+.bounce {
+  animation: bounce 0.25s ease-in 0s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10vh);
+  }
 }
 
 @keyframes spin {

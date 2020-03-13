@@ -1,5 +1,7 @@
 <div class="shadowBox">
-  <div class="loading" *ngIf="this.loading"></div>
+  <div class="bounce" *ngIf="this.loading">
+    <div class="loading"></div>
+  </div>
   <img class="postImage" *ngIf="!this.loading" src="{{ this.currentImage }}" />
 </div>
 
