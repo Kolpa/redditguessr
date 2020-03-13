@@ -1,12 +1,23 @@
 <div class="shadowBox">
-  <div class="bounce" *ngIf="this.loading">
-    <div class="loading"></div>
+  <div>
+    <div class="bounce" *ngIf="this.loading">
+      <div class="loading"></div>
+    </div>
+    <img
+      class="postImage"
+      *ngIf="!this.loading"
+      src="{{ this.currentImage }}"
+    />
   </div>
-  <img class="postImage" *ngIf="!this.loading" src="{{ this.currentImage }}" />
+</div>
+
+<div class="navigation" *ngIf="!this.loading">
+  <app-arrow class="back" (click)="this.prevPost()"></app-arrow>
+  <div class="clearfix"></div>
+  <app-arrow class="forward" (click)="this.nextPost()"></app-arrow>
 </div>
 
 <div class="controller">
-  <button (click)="this.nextPost()">Next</button>
   <input #subInput type="text" />
   <button (click)="this.checkSub(subInput.value)">Submit</button>
   <button (click)="this.newSub()">New Sub</button>

@@ -22,6 +22,17 @@
   justify-content: center;
 }
 
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .loading {
   width: 3vw;
   height: 3vw;
@@ -30,7 +41,11 @@
 }
 
 .bounce {
-  animation: bounce 0.25s ease-in 0s infinite alternate;
+  animation: bounce 0.25s ease-out 0s infinite alternate;
+}
+
+.back {
+  transform: rotateZ(180deg);
 }
 
 @keyframes bounce {
@@ -38,7 +53,7 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(10vh);
+    transform: translateY(-10vh);
   }
 }
 

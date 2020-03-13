@@ -45,6 +45,16 @@ export class RedditService {
     this.imageSubject$.next(this.imageBuffer[this.currentIndex]);
   }
 
+  public prevImage() {
+    this.currentIndex -= 1;
+
+    if (this.currentIndex < 0) {
+      this.currentIndex = this.maxImages - 1;
+    }
+
+    this.imageSubject$.next(this.imageBuffer[this.currentIndex]);
+  }
+
   private async getImagePosts() {
     this.attempt = 0;
 

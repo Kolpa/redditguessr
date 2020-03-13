@@ -26,8 +26,11 @@ export class GameControllerComponent implements OnInit {
   }
 
   nextPost() {
-    this.loading = true;
     this.reddit.nextImage();
+  }
+
+  prevPost() {
+    this.reddit.prevImage();
   }
 
   checkSub(subname: string) {
